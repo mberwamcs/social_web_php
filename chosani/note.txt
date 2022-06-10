@@ -1,0 +1,114 @@
+
+video # 73: security 
+
+html escaping / using google chrome browser
+1 - htmlentities = echo htmlentities($row['post'])
+        This puts a quotation mark arround the text that is posted
+        ex: output = everything the user typed (<script>alert('Hello')</script>).
+
+2 - htmlspecialchars = does the same as htmlentities; as for now 2/3/22
+
+myway
+    1 - htmlentities(htmlspecialchars( ))) = echo htmlentities(htmlspecialchars($row['post']))
+        this way it combine both functions 
+        This puts a quotation mark arround the text that is posted and traslates the special chars
+        output = &lt;script&gt;alert('Hello')&lt;/script&gt;
+        
+___________________________________________________________________________________________________________________________________________________
+
+ERROR:
+
+
+Warning: foreach() argument must be of type array|object, bool given in C:\xampp\htdocs\social_website\chosani\signin.php on line #
+
+foreach ($result as $row): $result is the issue here
+solution 
+
+if(is_array($result)){
+        foreach ($result as $row){
+            $id = $row['ID'];
+            // hash password
+            $password = hash("sha1", $row['Password']);
+        
+        $sql ="update all_me set Password = '$password' where  id = '$id' limit 1";
+        echo $sql;
+        $DB->save($sql);
+            }
+        }
+______________________________________________________________________________________________
+codes for the dictionary
+________________________________________________________________________________________________
+
+THE HTML and some PHP and sql
+
+
+<?php
+    include("dictionary.function.php");
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiziguwa dictionary</title>
+</head>
+<body>
+    <div style="text-align: center;"> 
+        <h1>Kiziguwa to English</h1>
+        <hr>
+
+
+            <?php
+                //$query = "select i from k_dictionary";
+
+                $query = "SELECT `saved_words`, `saved_meaning` FROM `k_dictionary` LIMIT 1 ";
+    
+                $result = mysqli_query($connection, $query);
+                        if(!$result){
+                            return false;
+                            echo "something want wrong";
+                            
+                        }else {
+                            //$data = false;
+                            while($row = mysqli_fetch_assoc($result)){
+                            $data = $row;
+                            //print ids
+                                echo "this data is from the database call 'account' and the table is 'k_dictionary' <br><br>";
+                                echo $data['saved_words'] .": ".$data['saved_meaning'];
+                        }
+                       return $data; 
+                    }
+                   // echo ;
+            ?>
+        </div>
+    </div>
+</body>
+</html>
+
+//search what is in the array
+ $input = $_POST['word'];
+
+$os= array("Mac", "NT", "Irix", "Linux"); 
+if (in_array($input, $os)) {
+    echo "Got ". $input;
+}else{
+  echo "The word you entered don't exist in the databasa! Try another word.";
+}
+
+
+?>
+<form action="" method="POST">
+  <input type="text" name="word">
+  <input type="submit" value="OK">
+</form>
+
+
+//in_array how to use it
+    $allowed[] = 'post';
+    $allowed[] = 'profile';
+    $allowed[] = 'comment';
+
+           if(in_array($_GET['type'], $allowed)){

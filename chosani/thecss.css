@@ -1,0 +1,114 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(207, 193, 193);
+    margin: 0;
+
+}
+.header {
+    height: 60px;
+    background-color: #9e5dab;
+    padding-top: 5px;
+}
+#main-name {
+    font-size:30px;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    margin:auto;
+    width: 60%;
+}
+#signupBtn {
+    background-color: rgb(17, 218, 10);
+    width: 80px;
+    text-align: center;
+    padding:5px;
+    border-radius: 3px;
+    float: right;
+}
+#below-hearder {
+    background-color: azure;
+    width: 600px;
+    margin: auto;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+} 
+#img {
+    border-radius: 10px;
+}
+
+#search_box{
+    width: 400px;
+    height: 20px;
+    border-radius: 3px;
+    border: 1px solid gray;
+    margin-left: 20px;
+    background-image: url("image/searching-icon.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size:25px;
+}
+#search_box:hover{
+    cursor: pointer;
+    background-position: 375px 0px;
+    background-size:px;
+}
+#a {
+    margin: 20px 5px 0;
+    float:right;
+}
+/************************ end of header style*/ 
+/******************signin page***************************/
+form {
+    width: 300px; 
+    margin:auto;
+    margin-top: 10px;
+    padding: 2px;
+}
+.signin-input {
+    height: 25px;
+    width: 98%;
+    margin: auto;
+    margin-top: 10px;
+    padding-left:2px;
+    border:.5px solid grey;
+    border-radius: 1px;
+    font-size: 1em;
+}
+#button {
+    background-color: #9e5dab;
+    width:100%;
+    font-size:large;
+    font-weight: bolder; color: white;
+    padding:5px;
+    border:.5px solid gray;
+    border-radius: 3px;
+    margin: auto;
+    margin-top: 10px;
+}
+/***********PROFILE PAGE*****************/
+.main {
+    background-color: #48ab69;
+    text-align: center;
+    margin:0 10px 0 0px;
+    background-image: url("image/storr_emg_62.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    text-align: center;
+    width: 74%;
+    float: right;
+   
+}
+
+span {  
+    font-size: 1.8em;
+    /*margin: 10px 15px auto 50px;*/
+
+}
+ 
+#img {
+    margin: 5px 10px;
+    border-radius: 5px;
+}
+
+.wrong{color: red;}
